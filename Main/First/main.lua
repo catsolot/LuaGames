@@ -1,5 +1,5 @@
-funtion love.load()
-man = love.graphics.newImage
+function love.load()
+man = love.graphics.newImage("Man.png")
 end
 
 function love.draw()
