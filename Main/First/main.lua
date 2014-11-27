@@ -1,15 +1,24 @@
+function love.conf(t)
+t.window.title = "Farmer"
+end
 function love.load()
-dofile("config.lua")
 man = love.graphics.newImage("Man.png")
 x = 50
 y = 50
 end
 
+function love.keypressed(key, False)
+if key == 'a' then
+x = x - 1
+end
+end
+
 function keys()
-left = love.keyboard.isDown('a', "left")
+left = love.keyboard.isDown('a')
 up = love.keyboard.isDown('w')
 down = love.keyboard.isDown('s')
 right = love.keyboard.isDown('d')
+exit = love.keyboard.isDown("escape")
 end
 
 function love.draw()
@@ -19,8 +28,12 @@ end
 
 function love.update(dt)
 keys()
+--love.keypressed()
+if exit then
+love.event.quit()
+end
 if left then
-x = x - 5
+love.keypressed('a', False)
 end
 if right then 
 x = x + 5
