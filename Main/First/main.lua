@@ -1,4 +1,5 @@
 function love.load()
+dofile("config.lua")
 man = love.graphics.newImage("Man.png")
 x = 50
 y = 50
